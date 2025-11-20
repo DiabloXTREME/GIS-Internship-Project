@@ -18,8 +18,36 @@
     <h2>Leaflet Map with Multiple Point Layers</h2>
     <div id="map"></div>
 
+    <div id ="form">
+
+        <h3>Submit Your Favorite Place</h3>
+        <form action="/app" method="post">
+            <label for="name">Place Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="type">Type of Place:</label><br>
+            <select id="type" name="type" required>
+                <option value="restaurant">Restaurant</option>
+                <option value="poi">Point of Interest</option>
+            </select><br><br>
+            
+            <button type="button" id="getlocation" onclick="getLocation()">Get my location</button>
+
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+
     <script>
-        // ---- Initialize Map ----
+       
+       function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+       
+       // ---- Initialize Map ----
         const map = L.map('map').setView([19.067597, 72.870794], 13); 
 
         // ---- Basemap ----
@@ -88,6 +116,10 @@
 
                 L.control.layers(null, overlays).addTo(map);
             });
+
+        
+
+
     </script>
 
 
