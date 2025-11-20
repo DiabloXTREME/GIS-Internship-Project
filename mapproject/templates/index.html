@@ -122,8 +122,12 @@
                 const lon = position.coords.longitude;
                 console.log(lat + ":lat,     lon: " + lon);
 
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup("You are here!")
+                    .openPopup();
+
                 // Send to server
-                fetch("/app", {
+                fetch("/add", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ latitude: lat, longitude: lon })
