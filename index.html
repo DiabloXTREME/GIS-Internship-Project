@@ -27,11 +27,28 @@
             maxZoom: 19
         }).addTo(map);
 
+
+
+
         // ---- Load your GeoJSON layer ----
         fetch("Restaurantsfinalv3.geojson")
             .then(r => r.json())
             .then(data => {
+
                 const restaurantsLayer = L.geoJSON(data, {
+                    
+                    // Red icons for restaurants
+
+                    pointToLayer: (feature, latlng) => 
+                        L.marker(latlng, {
+                            icon: L.icon({
+                                iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                                iconSize: [32, 32],
+                                iconAnchor: [16, 32],
+                                popupAnchor: [0, -32]
+                            })
+                        }),
+
                     onEachFeature: (f, l) => 
                         l.bindPopup(f.properties.Name || "Restaurant")
                 });
@@ -45,6 +62,28 @@
                 // Layer control
                 const overlays = {
                     "Restaurants": restaurantsLayer
+                };
+
+                L.control.layers(null, overlays).addTo(map);
+            });
+
+        fetch("PointOfInterestv2.geojson")
+            .then(r => r.json())
+            .then(data => {
+                const poiLayer = L.geoJSON(data, {
+                    onEachFeature: (f, l) => 
+                        l.bindPopup(f.properties.Name || "Point of Interest")
+                });
+
+                // Add layer to map
+                poiLayer.addTo(map);
+
+                // Auto zoom to this layer
+                map.fitBounds(poiLayer.getBounds());
+
+                // Layer control
+                const overlays = {
+                    "Points of Interest": poiLayer
                 };
 
                 L.control.layers(null, overlays).addTo(map);

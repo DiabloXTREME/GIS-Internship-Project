@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "PointOfInterestv2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 0, "Name": "Nita Mukesh Ambani Cultural Centre", "Sports": false }, "geometry": { "type": "Point", "coordinates": [ 72.867058412892234, 19.065292336358706 ] } },
+{ "type": "Feature", "properties": { "id": 1, "Name": "Jio World Centre", "Sports": false }, "geometry": { "type": "Point", "coordinates": [ 72.867027207100207, 19.063054414413763 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "Mumbai Cricket Association (MCA) Club", "Sports": true }, "geometry": { "type": "Point", "coordinates": [ 72.866370646822233, 19.05972830332955 ] } },
+{ "type": "Feature", "properties": { "id": 3, "Name": "Jio World Garden", "Sports": false }, "geometry": { "type": "Point", "coordinates": [ 72.862432808022092, 19.061987508307862 ] } },
+{ "type": "Feature", "properties": { "id": 4, "Name": "City Park", "Sports": true }, "geometry": { "type": "Point", "coordinates": [ 72.854232051772669, 19.055876813760335 ] } },
+{ "type": "Feature", "properties": { "id": 5, "Name": "Jio World Drive", "Sports": false }, "geometry": { "type": "Point", "coordinates": [ 72.851626452069993, 19.053808745463687 ] } },
+{ "type": "Feature", "properties": { "id": 6, "Name": "Maharashtra", "Sports": true }, "geometry": { "type": "Point", "coordinates": [ 72.862789164597217, 19.052391551312407 ] } },
+{ "type": "Feature", "properties": { "id": 7, "Name": "Manohar Joshi Badminton Court", "Sports": false }, "geometry": { "type": "Point", "coordinates": [ 72.861540795923929, 19.050883074328695 ] } },
+{ "type": "Feature", "properties": { "id": 8, "Name": "Manohar Joshi Sports Complex Crickshot Turf", "Sports": false }, "geometry": { "type": "Point", "coordinates": [ 72.863058019175341, 19.050893736956816 ] } },
+{ "type": "Feature", "properties": { "id": 9, "Name": "Taj Lands End", "Sports": false }, "geometry": { "type": "Point", "coordinates": [ 72.819332881515763, 19.043897873284628 ] } },
+{ "type": "Feature", "properties": { "id": 10, "Name": "Bandra Wonderland", "Sports": false }, "geometry": { "type": "Point", "coordinates": [ 72.828643811307714, 19.046671716707746 ] } }
+]
+}

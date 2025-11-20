@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"name": "restaurantsRight",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "Zakir Seekh Paratha" }, "geometry": { "type": "Point", "coordinates": [ 72.877423005421235, 19.078127774668328 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "Mughal Dhaba" }, "geometry": { "type": "Point", "coordinates": [ 72.877832777871333, 19.076607043411492 ] } },
+{ "type": "Feature", "properties": { "id": 3, "Name": "Nawab Seekh" }, "geometry": { "type": "Point", "coordinates": [ 72.878742272821555, 19.076729835894383 ] } },
+{ "type": "Feature", "properties": { "id": 4, "Name": "Serai Family Skydine" }, "geometry": { "type": "Point", "coordinates": [ 72.879631778871754, 19.078448921098829 ] } },
+{ "type": "Feature", "properties": { "id": 5, "Name": "Mubarak Restaurant" }, "geometry": { "type": "Point", "coordinates": [ 72.874744492820611, 19.073754453965218 ] } },
+{ "type": "Feature", "properties": { "id": 6, "Name": "Persian Darbar" }, "geometry": { "type": "Point", "coordinates": [ 72.876933277371123, 19.075964742787178 ] } },
+{ "type": "Feature", "properties": { "id": 7, "Name": "Deluxe Restaurant" }, "geometry": { "type": "Point", "coordinates": [ 72.875942329009106, 19.072574960170549 ] } },
+{ "type": "Feature", "properties": { "id": 8, "Name": "Wild N Wise Cafe" }, "geometry": { "type": "Point", "coordinates": [ 72.878764831125864, 19.072864580942667 ] } },
+{ "type": "Feature", "properties": { "id": 9, "Name": "GSK Juice Center" }, "geometry": { "type": "Point", "coordinates": [ 72.874796390707829, 19.067560706989127 ] } },
+{ "type": "Feature", "properties": { "id": 10, "Name": "Madeena Hotel" }, "geometry": { "type": "Point", "coordinates": [ 72.882512273507999, 19.069494021080047 ] } },
+{ "type": "Feature", "properties": { "id": 11, "Name": "Shalimar Restaurant" }, "geometry": { "type": "Point", "coordinates": [ 72.87960821871782, 19.066288513913477 ] } },
+{ "type": "Feature", "properties": { "id": 12, "Name": "Tabela Chai" }, "geometry": { "type": "Point", "coordinates": [ 72.878928032924108, 19.068028776570618 ] } }
+]
+}
