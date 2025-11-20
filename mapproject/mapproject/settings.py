@@ -25,18 +25,38 @@ SECRET_KEY = 'django-insecure-t^1nx08@kfzw7p#ehoyr_@2!rpd)+b-25y((j$715adj%x!grz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+# import os
+# from django.contrib.gis import geos
+#
+# # Auto-detect GDAL/GEOS inside your venv when on Windows
+# if os.name == "nt":
+#     venv_path = os.path.dirname(os.path.dirname(geos.__file__))
+#     dll_path = os.path.join(venv_path, "Lib", "site-packages", "osgeo")
+#
+#     # Find gdalXXX.dll dynamically
+#     gdal_dll = None
+#     for f in os.listdir(dll_path):
+#         if f.lower().startswith("gdal") and f.lower().endswith(".dll"):
+#             gdal_dll = os.path.join(dll_path, f)
+#             break
+#
+#     GDAL_LIBRARY_PATH = gdal_dll
+#     GEOS_LIBRARY_PATH = os.path.join(dll_path, "geos_c.dll")
+
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    # "django.contrib.gis",
+    # "mapping",
 ]
 
 MIDDLEWARE = [
@@ -73,11 +93,12 @@ WSGI_APPLICATION = 'mapproject.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
 
 
 # Password validation
