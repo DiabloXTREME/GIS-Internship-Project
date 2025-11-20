@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaflet Multiple Point Layers</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Leaflet Map with Multiple Point Layers</h2>
+    <div id="map"></div>
+
+    <script>
+        // ---- Initialize Map ----
+        const map = L.map('map').setView([19.067597, 72.870794], 13); 
+
+        // ---- Basemap ----
+        L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            maxZoom: 19
+        }).addTo(map);
+
+        // ---- Load your GeoJSON layer ----
+        fetch("Restaurantsfinalv3.geojson")
+            .then(r => r.json())
+            .then(data => {
+                const restaurantsLayer = L.geoJSON(data, {
+                    onEachFeature: (f, l) => 
+                        l.bindPopup(f.properties.Name || "Restaurant")
+                });
+
+                // Add layer to map
+                restaurantsLayer.addTo(map);
+
+                // Auto zoom to this layer
+                map.fitBounds(restaurantsLayer.getBounds());
+
+                // Layer control
+                const overlays = {
+                    "Restaurants": restaurantsLayer
+                };
+
+                L.control.layers(null, overlays).addTo(map);
+            });
+    </script>
+
+
+  </body>
+</html>
