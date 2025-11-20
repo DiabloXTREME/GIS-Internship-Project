@@ -44,6 +44,15 @@ DEBUG = True
 #     GDAL_LIBRARY_PATH = gdal_dll
 #     GEOS_LIBRARY_PATH = os.path.join(dll_path, "geos_c.dll")
 
+import os
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_URL = '/static/'
+
+# Add your global static folder
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 
 # Application definition
@@ -74,7 +83,7 @@ ROOT_URLCONF = 'mapproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/"templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
