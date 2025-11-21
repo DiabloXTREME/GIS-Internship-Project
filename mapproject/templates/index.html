@@ -22,7 +22,7 @@
     <div id ="form">
 
         <h3>Submit Your Favorite Place</h3>
-        <form action="add" method="post" onsubmit="return getLocation();"">
+        <form action="add" method="post" onsubmit=getLocation()>
             {% csrf_token %}
             <label for="name">Place Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
