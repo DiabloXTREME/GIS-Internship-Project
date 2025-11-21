@@ -22,7 +22,7 @@
     <div id ="form">
 
         <h3>Submit Your Favorite Place</h3>
-        <form action="add" method="post" onsubmit=getLocation()>
+        <form action="add" method="post" onsubmit="return getLocation();"">
             {% csrf_token %}
             <label for="name">Place Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
@@ -31,8 +31,9 @@
                 <option value="restaurant">Restaurant</option>
                 <option value="poi">Point of Interest</option>
             </select><br><br>
-            
-            <button type="button" id="getlocation" onclick="getLocation()">Get my location</button>
+
+            <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
 
             <input type="submit" value="Submit">
         </form>
@@ -120,23 +121,16 @@
             }
 
             navigator.geolocation.getCurrentPosition(position => {
-                const lat = position.coords.latitude;
-                const lon = position.coords.longitude;
-                console.log(lat + ":lat,     lon: " + lon);
 
-                L.marker([lat, lon]).addTo(map)
+                document.getElementById("latitude").value = position.coords.latitude;
+                document.getElementById("longitude").value = position.coords.longitude;
+
+                L.marker([position.coords.latitude, position.coords.longitude]).addTo(map)
                     .bindPopup("You are here!")
                     .openPopup();
 
-                // Send to server
-                fetch("add", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ latitude: lat, longitude: lon })
-                })
-                .then(res => res.text())
-                .then(msg => alert("Location sent!"))
-                .catch(err => console.error(err));
+                document.querySelector("form").submit();
+
 
             }, error => {
                 alert("Unable to get location.");
